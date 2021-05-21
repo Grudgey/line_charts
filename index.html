@@ -15,27 +15,61 @@
 
 <body class="text-center">
   <main class="charts-container">
+
     <div class="row">
       <div class="col">
-          <div class="row">
-            <div class="col-3 text-start">
-              <h2>Chart 1</h2>
-            </div>
-            <div class="col-4 text-end">
-              <p class="error" id="dm-filter-error"></p>
-            </div>
-            <div class="col-5">
-              <div class="input-group text-end">
-                <button class="btn btn-outline-secondary btn-sm" type="button" name="dm-btn-filter">Filter by weeks</button>
-                <input type="text" class="form-control" value="0" aria-label="Lower week filter limit" id="dm-btn-filter-lower" aria-describedby="dm-btn-filter">
-                <input type="text" class="form-control" value="52" aria-label="Upper week filter limit" id="dm-btn-filter-upper" aria-describedby="dm-btn-filter">
+        <h1 class="text-center">Generate Random Datapoints</h1>
+        <br>
+        <div class="row">
+          <div class="col">
+            <form>
+              <div class="form-group">
+                <div class="input-group justify-content-center mb-2">
+                  <label for="exampleInputEmail1" class="form-label mx-3">No. datapoints</label>
+                  <input type="text" class="form-control" value="10" aria-label="Number of datapoints" id="draw-datapoints-count" aria-describedby="draw-datapoints-count">
+                </div>
+                <fieldset>
+                  <div class="input-group justify-content-center">
+                    <legend class="mx-3">No. range</legend>
+                    <label for="number-range-lower" class="form-label visually-hidden">No. range lower</label>
+                    <input type="text" class="form-control" value="0" aria-label="number range" id="draw-datapoints-lower" aria-describedby="Number range lower">
+                    <label for="number-range-upper" class="form-label visually-hidden">No. range upper</label>
+                    <input type="text" class="form-control" value="10" aria-label="number range" id="draw-datapoints-upper" aria-describedby="Number range upper">
+                  </div>
+                </fieldset>
+                <br>
+                <button class="btn btn-primary" type="button" id="draw-datapoints" name="draw-datapoints">Draw Datapoints</button>
               </div>
-            </div>
+            </form>
           </div>
-        <canvas id="dm"></canvas>
-        <p>week</p>
+        </div>
       </div>
     </div>
+    <div class="row">
+      <div class="col">
+        <div class="row mt-5">
+          <div class="col-4 text-start">
+            <h2>Line Chart</h2>
+          </div>
+          <div class="col-3 text-end">
+            <p class="error" id="filter-error"></p>
+          </div>
+          <div class="col-5">
+            <div class="input-group text-end">
+              <button class="btn btn-outline-secondary btn-sm" type="button" id="filter-button" name="filter-button">Filter Columns</button>
+              <input type="text" class="form-control" aria-label="Lower column filter limit" id="filter-button-lower" aria-describedby="filter-button">
+              <input type="text" class="form-control" aria-label="Upper column filter limit" id="filter-button-upper" aria-describedby="filter-button">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <canvas id="chart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </main>
 </body>
 
