@@ -16,6 +16,9 @@ const generateRandomDatapoints = (range, count) => {
  return datapoints;
 };
 
+//initialise default chart
+const datapoints = generateRandomDatapoints({lower: 1, upper: 1}, 10);
+
 const handleFilterUpdate = (e) => {
 
   const lower = document.getElementById(e.target.name + '-lower').value;
@@ -30,8 +33,6 @@ const handleFilterUpdate = (e) => {
           document.getElementById('filter-error').innerHTML = 'Upper has to be 2 higher than lower';
         }
 
-  //will need to make sure lower is not higher than upper
-  //simply slice the input array and redraw all
 };
 
 
@@ -150,4 +151,4 @@ const draw = (datapoints, chart, colour) => {
   chart.stroke();
 };
 
-draw([], chart, "red");
+draw(datapoints, chart, "red");
